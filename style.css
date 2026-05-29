@@ -1,0 +1,624 @@
+/* ============================================
+   TRAGEDI BOM BALI — Stylesheet
+   Color Palette:
+     Navy     : #30364F
+     Blue-gray : #ACBAC4
+     Cream     : #E1D9BC
+     Off-white : #F0F0DB
+============================================ */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Source Serif 4', serif;
+  background-color: #F0F0DB;
+  color: #30364F;
+  min-height: 100vh;
+  font-size: 17px;
+}
+
+/* ─── NAVBAR ─────────────────────────────── */
+
+.navbar {
+  background: #30364F;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-brand {
+  font-family: 'Playfair Display', serif;
+  color: #F0F0DB;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.navbar-nav a {
+  color: #ACBAC4;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  font-family: 'Source Serif 4', serif;
+  font-weight: 300;
+  transition: color 0.2s ease;
+}
+
+.navbar-nav a:hover {
+  color: #E1D9BC;
+}
+
+/* ─── HERO ───────────────────────────────── */
+
+.hero {
+  background: #30364F;
+  padding: 4rem 2rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-layout {
+  max-width: 1540px;
+  margin: 0 auto;
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 80px,
+    rgba(172, 186, 196, 0.04) 80px,
+    rgba(172, 186, 196, 0.04) 81px
+  );
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 640px;
+  flex: 0 0 640px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── HERO SLIDER ───────────────────────── */
+
+.hero-slider {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+
+.hero-slider-viewport {
+  width: 100%;
+  height: 340px;
+  overflow: hidden;
+  border-radius: 4px;
+  border: 0.5px solid rgba(172, 186, 196, 0.35);
+  background: rgba(172, 186, 196, 0.06);
+  padding: 14px;
+}
+
+.hero-slider-track {
+  height: 100%;
+  display: flex;
+  gap: 18px;
+  width: max-content;
+  animation: hero-slide 22s linear infinite;
+}
+
+.hero-slide {
+  height: 100%;
+  width: 300px;
+  border-radius: 4px;
+  object-fit: cover;
+  display: block;
+  flex: 0 0 auto;
+}
+
+@keyframes hero-slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.hero-eyebrow {
+  font-family: 'Source Serif 4', serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: #ACBAC4;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  line-height: 1.15;
+  color: #F0F0DB;
+  margin-bottom: 1.25rem;
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #ACBAC4;
+  font-weight: 300;
+  max-width: 480px;
+}
+
+.hero-meta {
+  margin-top: 2rem;
+  display: flex;
+  gap: 2rem;
+  border-top: 0.5px solid rgba(172, 186, 196, 0.3);
+  padding-top: 1.5rem;
+}
+
+.hero-stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #E1D9BC;
+  font-weight: 600;
+}
+
+.hero-stat-label {
+  font-size: 11px;
+  color: #ACBAC4;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* ─── TAB NAVIGATION ─────────────────────── */
+
+.nav-tabs-section {
+  background: #ACBAC4;
+  display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.nav-tabs-section::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-btn {
+  padding: 12px 20px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: 'Source Serif 4', serif;
+  color: #30364F;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0.7;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.tab-btn.active {
+  opacity: 1;
+  border-bottom-color: #30364F;
+  font-weight: 600;
+}
+
+.tab-btn:hover {
+  opacity: 1;
+}
+
+/* ─── MAIN CONTENT ───────────────────────── */
+
+.main-content {
+  padding: 2rem;
+  width: 100%;
+  max-width: 1540px;
+  margin: 0 auto;
+}
+
+/* ─── SECTIONS ───────────────────────────── */
+
+.section {
+  display: none;
+}
+
+.section.active {
+  display: block;
+}
+
+.section-label {
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #ACBAC4;
+  margin-bottom: 0.5rem;
+  font-family: 'Source Serif 4', serif;
+}
+
+.section-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: #30364F;
+  margin-bottom: 1.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* ─── PROSE ──────────────────────────────── */
+
+.prose {
+  font-size: 18px;
+  line-height: 1.85;
+  color: #30364F;
+  font-weight: 300;
+}
+
+.prose p + p {
+  margin-top: 1rem;
+}
+
+/* ─── DIVIDER ────────────────────────────── */
+
+.divider {
+  height: 0.5px;
+  background: #ACBAC4;
+  margin: 2rem 0;
+  opacity: 0.5;
+}
+
+/* ─── QUOTE BLOCK ────────────────────────── */
+
+.quote-block {
+  border-left: 3px solid #30364F;
+  padding: 0.75rem 0 0.75rem 1.25rem;
+  margin: 1.5rem 0;
+  background: rgba(172, 186, 196, 0.15);
+  border-radius: 0 4px 4px 0;
+}
+
+.quote-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-style: italic;
+  color: #30364F;
+  line-height: 1.6;
+}
+
+/* ─── TIMELINE ───────────────────────────── */
+
+.timeline {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 0;
+  width: 1px;
+  background: #ACBAC4;
+  opacity: 0.5;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 1.75rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -1.5rem;
+  top: 6px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #30364F;
+}
+
+.timeline-date {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: #ACBAC4;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  font-family: 'Source Serif 4', serif;
+}
+
+.timeline-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #30364F;
+  font-weight: 300;
+}
+
+/* ─── IMPACT GRID ────────────────────────── */
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 1.5rem;
+}
+
+.impact-card {
+  background: #E1D9BC;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.impact-card-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: #30364F;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.impact-card-label {
+  font-size: 11px;
+  color: #30364F;
+  opacity: 0.65;
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.impact-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #30364F;
+  margin-top: 8px;
+  font-weight: 300;
+}
+
+/* ─── SECTION IMAGES ─────────────────────── */
+
+.section-image {
+  width: 75%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  margin: 1.25rem auto;
+  border: 0.5px solid rgba(172, 186, 196, 0.4);
+}
+
+.section-image--compact {
+  margin: 1rem auto 1.5rem;
+}
+
+/* ─── PERSON GRID ────────────────────────── */
+
+.person-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 1.5rem;
+}
+
+.person-card {
+  background: #30364F;
+  border-radius: 4px;
+  padding: 1rem 1rem 0.875rem;
+}
+
+.person-role {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #ACBAC4;
+  margin-bottom: 6px;
+}
+
+.person-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  color: #E1D9BC;
+  margin-bottom: 6px;
+}
+
+.person-desc {
+  font-size: 12px;
+  line-height: 1.55;
+  color: #ACBAC4;
+  font-weight: 300;
+}
+
+/* ─── PEOPLE LIST (PHOTO + ARTICLE) ─────── */
+
+.people-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 1.5rem;
+}
+
+.person-block {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: #30364F;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+/* Bigger, more readable typography inside Tokoh blocks */
+
+.person-block .person-name {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.person-block .person-role {
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.person-block .person-desc {
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.person-photo {
+  flex: 0 0 auto;
+  width: 128px;
+  height: 152px;
+  border-radius: 4px;
+  background: rgba(172, 186, 196, 0.14);
+  border: 0.5px solid rgba(172, 186, 196, 0.35);
+  overflow: hidden;
+}
+
+.person-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.person-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.person-body .person-desc + .person-role {
+  margin-top: 10px;
+}
+
+.person-body .person-desc + .person-desc {
+  margin-top: 10px;
+}
+
+/* ─── NEWS LIST ──────────────────────────── */
+
+.news-list {
+  margin-top: 1.5rem;
+}
+
+.news-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 0.5px solid rgba(172, 186, 196, 0.4);
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.news-item:hover {
+  opacity: 0.75;
+}
+
+.news-source-tag {
+  flex-shrink: 0;
+  background: #ACBAC4;
+  color: #30364F;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 2px;
+  height: fit-content;
+  margin-top: 2px;
+  font-weight: 600;
+}
+
+.news-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  color: #30364F;
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+
+.news-meta {
+  font-size: 12px;
+  color: #ACBAC4;
+  letter-spacing: 0.05em;
+}
+
+/* ─── RESPONSIVE ─────────────────────────── */
+
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 30px;
+  }
+
+  .hero-meta {
+    gap: 1.25rem;
+  }
+
+  .hero-stat-num {
+    font-size: 22px;
+  }
+
+  .impact-grid,
+  .person-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .person-block {
+    flex-direction: column;
+  }
+
+  .person-photo {
+    width: 100%;
+    height: 200px;
+  }
+
+  .navbar-nav {
+    display: none;
+  }
+
+  .main-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .hero-layout {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .hero-slider-viewport {
+    height: 240px;
+    padding: 12px;
+  }
+
+  .hero-slide {
+    width: 240px;
+  }
+}
