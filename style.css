@@ -537,6 +537,8 @@ body {
   border-bottom: 0.5px solid rgba(172, 186, 196, 0.4);
   cursor: pointer;
   transition: opacity 0.15s ease;
+  text-decoration: none;
+  color: inherit;
 }
 
 .news-item:hover {
