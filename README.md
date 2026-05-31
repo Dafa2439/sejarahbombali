@@ -95,6 +95,14 @@ sejarahbombali/
 - [Reuters — Indonesia marks 20th anniversary of Bali bombings](https://www.reuters.com/world/asia-pacific/indonesia-marks-20th-anniversary-bali-bombings-2022-10-12/)
 - [CNN Indonesia — Kilas Balik Tragedi Bom Bali 2002](https://www.cnnindonesia.com/nasional/20221012070418-12-860056/kilas-balik-tragedi-bom-bali-2002)
 
+## Tim Pengembang
+
+| No | Nama | Kelas |
+|:--:|:-----|:------|
+| 1 | Dafa Rizqi Arkananta | XI SIJA 2 |
+| 2 | Krisna Mandala Putra | XI SIJA 2 |
+| 3 | Nakendra Wisnu Megananda | XI SIJA 2 |
+
 ---
 
 <div align="center">
